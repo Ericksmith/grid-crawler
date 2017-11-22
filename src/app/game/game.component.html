@@ -1,0 +1,36 @@
+<div id="wrapper">
+  <div id="content">
+    <div id="interface">
+      <h3 id="title">Grid Crawler</h3>
+      <h4>Level {{level}}</h4>
+      <p>{{firstParagraph}}</p>
+      <p [innerHTML]="secondParagraph"></p>
+    <div id="textEditor" class="{{shake}}">
+      <div id="lineNum">
+        <p *ngFor="let row of textRows; let idx = index" class="{{row}}">{{idx + 1}}</p>
+      </div>
+      <div id="userCode">
+        <p *ngFor="let row of codeRow" ng-trim="false" class="{{row.class}}">{{row.input}}</p>
+        <form #registerForm="ngForm" (submit)="advance()">
+          <input type="text" (keyup)="checkInput()" autocomplete="off" name="userInput" class="indent" [(ngModel)]="userInput">
+          <input type="submit" value="Next">
+        </form>
+        <p>}</p>
+      </div>
+    </div>
+    </div>
+    <div id="gameArea">
+      <div id="board">
+        <div id="clear" [@levelComplete]="winStatus">
+          <h3>Level Cleared!</h3>
+          <h4 class="animate infinite pulse">Hit next to continue</h4>
+        </div>
+        <img *ngFor="let tile of layout" src="./../../../assets/tile.jpg" alt="" class="{{tile}}">
+        <img *ngIf="level < 4" src="./../../../assets/heroSmall.png" alt="hero" id="hero" [ngStyle]="heroStart" class="animated fadeInLeft">
+        <img *ngIf="level > 3" src="./../../../assets/herofire.png" alt="hero" id="hero" [ngStyle]="heroStart" class="animated fadeInLeft">
+        <img  src="./../../../assets/treasure.png" alt="" id="chest" [@reachChest]="reached" [ngStyle]="treasureStart" >
+        <img *ngIf="level > 3" src="./../../../assets/firewall.png" id="flameWall" [ngStyle]="fireLocation" alt="">
+      </div>
+    </div>
+  </div>
+</div>

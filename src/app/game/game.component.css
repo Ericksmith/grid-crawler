@@ -1,0 +1,314 @@
+#wrapper{
+    width: 97%;
+    height: 100%;
+    background-color: rgb(66, 66, 66);
+    padding: 20px;
+}
+
+h3{
+    color: white;
+    margin-bottom: 5px;
+}
+
+p{
+    color: white;
+    margin-right: 20px;
+}
+
+#textEditor{
+    display: block;
+    background-color: rgb(212, 212, 212);
+    width: 500px;
+    height: 430px;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
+
+.white {
+    background-color: white;
+}
+
+.indent {
+    text-indent: 30px;
+}
+
+
+#lineNum{
+    width: 25px;
+    border-right: 3px solid black;
+    display: inline-block;
+    height: 100%;
+}
+
+#lineNum > p{
+    width: 100%;
+    color: black;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: center;
+}
+
+#userCode{
+    display: inline-block;
+    width: 470px;
+    vertical-align: top;
+    margin-left: -4px;
+}
+
+#userCode > p{
+    color: black;
+    width: 100%;
+    font-size: 14px;
+    line-height: 26px 
+}
+
+.tip{
+    background-color: rgb(250, 125, 125);
+}
+
+#content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#interface{
+    grid-column: 1;
+}
+
+#gameArea{
+    grid-column: 2;
+    padding: 20px;
+    background-color: black;
+}
+
+#board{
+    display: grid;
+    grid-template-columns: repeat(5, 125px);
+    grid-template-rows: repeat(5, 125px);
+    color: white;
+    grid-gap: 5px;
+
+}
+
+#chest{
+    width: 70px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+#title{
+    font-family: 'Press Start 2P', cursive;
+}
+
+img{
+    width: 125px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#hero {
+    grid-column: 1;
+    grid-row: 1;
+    width: 80px;
+    margin-left: 10px;
+    margin-top: 5px;
+    z-index: 3;
+}
+#clear{
+    grid-column: 2/5;
+    grid-row: 2;
+    z-index: 5;
+    text-align: center;
+}
+#clear > *{
+    color: red;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
+}
+
+#flameWall{
+    width: 100%;
+    margin-top: 23px;
+    grid-column: 2/5;
+    grid-row: 1;
+}
+
+.tile1 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.tile2 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.tile3 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.tile4 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 4;
+    grid-row: 1;
+}
+.tile5 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 5;
+    grid-row: 1;
+}
+.tile6 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 2;
+}
+.tile7 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 2;
+}
+.tile8 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 3;
+    grid-row: 2;
+}
+.tile9 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 4;
+    grid-row: 2;
+}
+.tile10 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 5;
+    grid-row: 2;
+}
+.tile11 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.tile12 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 3;
+}
+.tile13 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 3;
+    grid-row: 3;
+}
+.tile14 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 4;
+    grid-row: 3;
+}
+.tile15 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 5;
+    grid-row: 3;
+}
+.tile16 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 4;
+}
+.tile17 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 4;
+}
+.tile18 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 3;
+    grid-row: 4;
+}
+.tile19 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 4;
+    grid-row: 4;
+}
+.tile20 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 5;
+    grid-row: 4;
+}
+.tile21 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 5;
+}
+.tile22 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 5;
+}
+.tile23 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 3;
+    grid-row: 5;
+}
+.tile24 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 4;
+    grid-row: 5;
+}
+.tile25 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    grid-column: 5;
+    grid-row: 5;
+}
