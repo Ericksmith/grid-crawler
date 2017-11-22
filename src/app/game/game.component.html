@@ -12,10 +12,10 @@
       <div id="userCode">
         <p *ngFor="let row of codeRow" ng-trim="false" class="{{row.class}}">{{row.input}}</p>
         <form #registerForm="ngForm" (submit)="advance()">
-          <input type="text" (keyup)="checkInput()" autocomplete="off" name="userInput" class="indent" [(ngModel)]="userInput">
-          <input type="submit" value="Next">
+          <input type="text" (keyup)="checkInput()" autocomplete="off" id="userInput" name="userInput" class="indent" [(ngModel)]="userInput">
+          <p>}</p>
+          <input type="submit" value="Next" id="nextButton">
         </form>
-        <p>}</p>
       </div>
     </div>
     </div>
