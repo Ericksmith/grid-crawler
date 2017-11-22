@@ -23,15 +23,15 @@
       <div id="board">
         <div id="clear" [@levelComplete]="winStatus">
           <h3>Level Cleared!</h3>
-          <h4 class="animate infinite pulse">Hit next to continue</h4>
+          <h4 class="animated infinite pulse">Hit next to continue</h4>
         </div>
         <img *ngFor="let tile of layout" src="./../../../assets/tile.jpg" alt="" class="{{tile}}">
         <img *ngIf="level < 4" src="./../../../assets/heroSmall.png" alt="hero" id="hero" [ngStyle]="heroStart" class="animated fadeInLeft">
         <img *ngIf="level > 3" src="./../../../assets/herofire.png" alt="hero" id="hero" [ngStyle]="heroStart" class="animated fadeInLeft">
-        <img  src="./../../../assets/treasure.png" alt="" id="chest" [@reachChest]="reached" [ngStyle]="treasureStart" >
-        <img *ngIf="level > 3" src="./../../../assets/firewall.png" id="flameWall" [ngStyle]="fireLocation" alt="">
-        <img *ngIf="level > 3" src="./../../../assets/orge.png" id="orge1" class="animited infinite pulse" alt="">
-        <img *ngIf="level > 3" src="./../../../assets/orge.png" id="orge2" class="animited infinite pulse" alt="">
+        <img  src="./../../../assets/treasure.png" alt="" id="chest" [@fadeInOrOut]="reached" [ngStyle]="treasureStart" >
+        <img *ngIf="level > 3" src="./../../../assets/firewall.png" id="flameWall" [@fadeInOrOut]="there" [ngStyle]="fireLocation" alt="">
+        <img *ngIf="level > 3" src="./../../../assets/ogre.png" id="ogre1" [@fadeInOrOut]="ogreFade" class="animated infinite pulse" alt="">
+        <img *ngIf="level > 3" src="./../../../assets/ogre.png" id="ogre2" [@fadeInOrOut]="ogreFade" class="animated infinite pulse" alt="">
       </div>
     </div>
   </div>

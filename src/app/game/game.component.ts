@@ -18,7 +18,7 @@ import {
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css'],
   animations: [
-    trigger('reachChest', [
+    trigger('fadeInOrOut', [
       state('there', style({
         opacity: 1
       })),
@@ -26,7 +26,7 @@ import {
         opacity: 0
       })),
 
-      transition('there => gone', animate('600ms ease-in')),
+      transition('there <=> gone', animate('800ms ease-in')),
     ]),
     trigger("levelComplete", [
       state('notWinner', style({
@@ -36,7 +36,7 @@ import {
           transform: "translateX(0)"
         })),
         transition("notWinner => winner", animate("600ms ease-in"))
-    ])
+    ]),
 
   ]
 })
@@ -59,7 +59,8 @@ export class GameComponent implements OnInit {
   gridMod: any;
   winStatus: string;
   fireLocation: any;
-
+  ogreFade: string;
+  flameCast: string;
 
 
   constructor(private _router: Router) { }
@@ -74,18 +75,20 @@ export class GameComponent implements OnInit {
     }
     this.codeRow = this.gameData[this.level].codeRow;
     this.userInput = this.gameData[this.level].userInput;
-    this.winStatus = "notWinner"
-    this.reached = "there"
-    this.shake = "test"
+    this.winStatus = "notWinner";
+    this.reached = "there";
+    this.shake = "test";
     this.next = false;
-    this.firstParagraph = this.gameData[this.level].p1
-    this.secondParagraph = this.gameData[this.level].p2
-    this.layout = this.gameData[this.level].boardState
-    this.textRows = this.gameData[this.level].textRows
-    this.gridMod = this.gameData[this.level].gridMod
-    this.treasureStart = this.gameData[this.level].treasureStart
-    this.heroStart = {"grid-column": 1}
-    this.fireLocation = {"grid-column": 2/5}
+    this.firstParagraph = this.gameData[this.level].p1;
+    this.secondParagraph = this.gameData[this.level].p2;
+    this.layout = this.gameData[this.level].boardState;
+    this.textRows = this.gameData[this.level].textRows;
+    this.gridMod = this.gameData[this.level].gridMod;
+    this.treasureStart = this.gameData[this.level].treasureStart;
+    this.heroStart = {"grid-column": 1};
+    this.fireLocation = {"grid-column": 2/5};
+    this.ogreFade = "there";
+    this.flameCast = "gone"
   }
 
   checkInput(){
@@ -101,6 +104,9 @@ export class GameComponent implements OnInit {
         console.log(this.fireLocation);
       }
       if(this.gameData[this.level].winningInput.test(this.userInput)){
+        if(this.level == 4){
+          this.ogreFade = "gone";
+        }
         this.winGame();
       }
     } else{
@@ -232,7 +238,7 @@ export class GameComponent implements OnInit {
       }
       ]},
       3: {
-        p1: "You can also use negative numbers to start at the end of the column. -1 will start outside the grid area and -2 will be the 5th column.",
+        p1: "You can also use negative numbers to start at the end of the columns. -1 will start outside the grid area and -2 will be the 5th column.",
         p2: "Try entering a negavite number to get to the treasure in that is currently in the 4th column",
         boardState: ["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7", "tile8", "tile9", "tile10", "tile11", "tile12", "tile13", "tile14", "tile15", "tile16", "tile17", "tile18", "tile19", "tile20", "tile21", "tile22", "tile23", "tile24", "tile25"],        
         userInput: "grid-column: ",
@@ -280,14 +286,14 @@ export class GameComponent implements OnInit {
         }
         ]},
         4: {
-          p1: "",
-          p2: "Try entering a negavite number to get to the treasure in that is currently in the 4th column",
+          p1: "Uh oh! There are ogres blocking our path! You better use your #flameWall attack to dispatch them.",
+          p2: "If you were to enter grid-column: 1/5; then that element would span from column 1 up to but not including column 5. Make the #flameWall extend from column 2 and stop in column 4.",
           boardState: ["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7", "tile8", "tile9", "tile10", "tile11", "tile12", "tile13", "tile14", "tile15", "tile16", "tile17", "tile18", "tile19", "tile20", "tile21", "tile22", "tile23", "tile24", "tile25"],        
           userInput: "grid-column: ",
           gridMod: "grid-column: ",
           treasureStart: {"grid-area": "1/5/1/5"},
-          validInput: /^grid-column: -?\d/,
-          winningInput: /^grid-column: -3/,
+          validInput: /^grid-column: \d.\d$/,
+          winningInput: /^grid-column: 2.5/,
           textRows: ["white", "", "white", "", "white", "", "white", "", "white", "", "white", "", "white", "", "white", ""],
           codeRow: [
             {
@@ -339,7 +345,7 @@ export class GameComponent implements OnInit {
             input: "#flameWall {"
           },
           {
-            class: "indent",
+            class: "indent white",
             input: "grid-row: 1;"
           }
           ]},
