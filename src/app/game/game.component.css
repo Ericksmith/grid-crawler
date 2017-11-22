@@ -133,6 +133,18 @@ img{
     grid-row: 1;
 }
 
+#orge1{
+    width: 40px;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#orge1{
+    width: 40px;
+    grid-column: 4;
+    grid-row: 1;
+}
+
 .tile1 {
     display: block;
     width: 100%;
