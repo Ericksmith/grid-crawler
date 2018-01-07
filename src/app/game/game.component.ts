@@ -140,8 +140,8 @@ export class GameComponent implements OnInit {
 
   gameData = {
     1: {
-    p1: "Welcome! Your goal is to get to navigate the dungeon and learn some CSS grid along the way.",
-    p2: "Use the grid-column rule to move the hero to the tressure. There are 5 columns in this map.",
+    p1: "Welcome! Your goal is to navigate the dungeon and learn some CSS grid along the way.",
+    p2: "Use the grid-column rule to move the hero to the treasure. There are 5 columns in this map.",
     boardState: ["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7", "tile8", "tile9", "tile10", "tile11", "tile12", "tile13", "tile14", "tile15", "tile16", "tile17", "tile18", "tile19", "tile20", "tile21", "tile22", "tile23", "tile24", "tile25"],    
     // heroStart: {"grid-column": 1},
     userInput: "grid-column: ",
@@ -190,7 +190,7 @@ export class GameComponent implements OnInit {
     ]},
 
     2: {
-      p1: "Good job! You are not just able to place CSS classes and IDs in columns but also rows.",
+      p1: "Good job! You can place elements in rows as well as columns.",
       p2: "Now use the grid-row rule to traverse the rows down to the treasure.",
       boardState: ["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7", "tile8", "tile9", "tile10", "tile11", "tile12", "tile13", "tile14", "tile15", "tile16", "tile17", "tile18", "tile19", "tile20", "tile21", "tile22", "tile23", "tile24", "tile25"],
       heroStart: {"grid-row": 1},
@@ -238,8 +238,8 @@ export class GameComponent implements OnInit {
       }
       ]},
       3: {
-        p1: "You can also use negative numbers to start at the end of the columns. -1 will start outside the grid area and -2 will be the 5th column.",
-        p2: "Try entering a negavite number to get to the treasure in that is currently in the 4th column",
+        p1: "You can use negative numbers to start at the end of the columns. -1 will put you outside the grid area and -2 will get you to 5th column.",
+        p2: "Try entering a negative number to get to the treasure that is currently in the 4th column",
         boardState: ["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7", "tile8", "tile9", "tile10", "tile11", "tile12", "tile13", "tile14", "tile15", "tile16", "tile17", "tile18", "tile19", "tile20", "tile21", "tile22", "tile23", "tile24", "tile25"],        
         userInput: "grid-column: ",
         gridMod: "grid-column: ",
@@ -287,7 +287,7 @@ export class GameComponent implements OnInit {
         ]},
         4: {
           p1: "Uh oh! There are ogres blocking our path! You better use your #flameWall attack to dispatch them.",
-          p2: "If you were to enter grid-column: 1/5; then that element would span from column 1 up to but not including column 5. Make the #flameWall extend from column 2 and stop in column 4.",
+          p2: "If you were to enter grid-column: 1/5; then that element would span from column 1 up to but not including column 5. To kill the ogres, make #flameWall extend from column 2 and stop in column 4.",
           boardState: ["tile1", "tile2", "tile3", "tile4", "tile5", "tile6", "tile7", "tile8", "tile9", "tile10", "tile11", "tile12", "tile13", "tile14", "tile15", "tile16", "tile17", "tile18", "tile19", "tile20", "tile21", "tile22", "tile23", "tile24", "tile25"],        
           userInput: "grid-column: ",
           gridMod: "grid-column: ",
