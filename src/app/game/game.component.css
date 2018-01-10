@@ -1,5 +1,5 @@
 #wrapper{
-    width: 97%;
+    width: 100%;
     height: 1000px;
     background-color: rgb(66, 66, 66);
     padding: 20px;
@@ -78,7 +78,7 @@ form > *{
 
 #content{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 799px 686px;
 }
 
 #interface{

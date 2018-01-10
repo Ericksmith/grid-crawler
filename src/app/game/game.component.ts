@@ -30,10 +30,10 @@ import {
     ]),
     trigger("levelComplete", [
       state('notWinner', style({
-        transform: "translateX(800px)"
+        opacity: 0
       })),
         state("winner", style({
-          transform: "translateX(0)"
+          opacity: 1
         })),
         transition("notWinner => winner", animate("600ms ease-in"))
     ]),
