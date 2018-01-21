@@ -101,7 +101,6 @@ export class GameComponent implements OnInit {
         this.heroStart = {"grid-column": this.userInput.slice(this.userInput.length-2, this.userInput.length)}
       } else if(this.level == 4){
         this.fireLocation = {"grid-column": this.userInput.slice(this.userInput.length-3, this.userInput.length)}
-        console.log(this.fireLocation);
       }
       if(this.gameData[this.level].winningInput.test(this.userInput)){
         if(this.level == 4){
@@ -132,7 +131,6 @@ export class GameComponent implements OnInit {
     } else {
       this.shake = "animated shake"
       setTimeout(()=>{
-        console.log('stop');
         this.shake = "none"
       }, 3000)
     }
