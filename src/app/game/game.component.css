@@ -1,5 +1,6 @@
 #wrapper{
-    width: 100%;
+    margin: auto;
+    width: max-content;
     height: 1000px;
     background-color: rgb(66, 66, 66);
     padding: 20px;
@@ -78,7 +79,7 @@ form > *{
 
 #content{
     display: grid;
-    grid-template-columns: 799px 686px;
+    grid-template-columns: 518px 686px;
 }
 
 #interface{
@@ -137,7 +138,7 @@ img{
 
 #flameWall{
     width: 100%;
-    margin-top: 30%;
+    margin-top: 6%;
     grid-column: 2/3;
     grid-row: 1;
     z-index: 6;
